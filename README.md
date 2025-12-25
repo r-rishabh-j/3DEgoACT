@@ -4,15 +4,13 @@
 
 ## 📖 Overview
 
-Standard imitation learning methods, such as the Action Chunking Transformer (ACT), excel at encoding human dexterity but are brittle to camera shifts. A small change in camera angle often leads to a complete collapse in performance (0% success) due to overfitting to fixed 2D viewpoints.
+Standard imitation learning methods, such as the Action Chunking Transformer (ACT), excel at encoding human dexterity but are brittle to camera shifts.
 
 **3DEgoACT** addresses this by introducing a hybrid architecture:
 
 * **Global Geometry:** Uses a PointNet encoder to process a downsampled 3D point cloud, providing a viewpoint-invariant spatial prior.
 
-
 * **Local Precision:** Retains an egocentric (Eye-in-Hand) RGB view encoded via ResNet for fine-grained manipulation capability.
-
 
 * **Efficiency:** Designed for low-cost deployment, running at ~14 actions/s on consumer hardware (e.g., MacBook M1).
 
@@ -36,7 +34,7 @@ The model extends the standard ACT architecture by adding a parallel 3D encoding
 3. **Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.
 
 
-4. **Action Head:** A CVAE-based Transformer Decoder predicts a "chunk" of future actions ( steps) to ensure temporal smoothness.
+4. **Action Head:** Standard ACT Transformer Decoder predicts a "chunk" of future actions.
 
 ## ⚙️ Environment & Setup
 
@@ -99,16 +97,3 @@ The model was trained for 100 epochs with the following configuration:
 * **Optimizer:** AdamW (Weight Decay 0.01)
 * **Chunk Size:** 50
 * **Hardware:** Single NVIDIA L4 GPU
-
-To train the model:
-
-```bash
-python train.py \
-  --policy 3DEgoACT \
-  --dataset_path data/xarm_pick_place \
-  --batch_size 32 \
-  --num_epochs 100 \
-  --use_point_cloud True \
-  --use_eef_cam True
-
-```

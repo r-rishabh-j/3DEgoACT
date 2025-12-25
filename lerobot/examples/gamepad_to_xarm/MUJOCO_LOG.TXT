@@ -1,0 +1,9 @@
+Sun Nov  9 21:43:54 2025
+WARNING: mju_openResource: unknown file 'path/to/your/model.xml'
+
+Sun Nov  9 21:47:40 2025
+ERROR: mjv_updateSceneState: m->nu changed
+
+Sun Nov  9 22:24:59 2025
+ERROR: mjv_updateSceneState: m->nu changed
+

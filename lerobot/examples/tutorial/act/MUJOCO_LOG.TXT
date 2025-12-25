@@ -1,0 +1,6 @@
+Thu Nov 13 00:49:48 2025
+ERROR: mjv_updateSceneState: m->nu changed
+
+Thu Nov 13 16:07:29 2025
+ERROR: mjv_updateSceneState: m->nu changed
+

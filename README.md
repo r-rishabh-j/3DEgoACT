@@ -31,8 +31,7 @@ The model extends the standard ACT architecture by adding a parallel 3D encoding
 
 2. **Encoders:**
 * **ResNet-18:** Encodes the egocentric image.
-* 
-**PointNet:** Embeds the point cloud into a  token.
+* **PointNet:** Embeds the point cloud into a  token.
 
 3. 
 **Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.

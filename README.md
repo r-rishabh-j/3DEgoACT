@@ -33,12 +33,10 @@ The model extends the standard ACT architecture by adding a parallel 3D encoding
 * **ResNet-18:** Encodes the egocentric image.
 * **PointNet:** Embeds the point cloud into a  token.
 
-3. 
-**Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.
+3. **Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.
 
 
-4. 
-**Action Head:** A CVAE-based Transformer Decoder predicts a "chunk" of future actions ( steps) to ensure temporal smoothness.
+4. **Action Head:** A CVAE-based Transformer Decoder predicts a "chunk" of future actions ( steps) to ensure temporal smoothness.
 
 ## ⚙️ Environment & Setup
 

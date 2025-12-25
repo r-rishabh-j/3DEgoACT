@@ -18,6 +18,8 @@ Standard imitation learning methods, such as the Action Chunking Transformer (AC
 
 The model extends the standard ACT architecture by adding a parallel 3D encoding stream.
 
+<p align="center"><img src="act3d.png" alt="3DEgoACT" style="width:80%; height:auto;"></p>
+
 1. **Inputs:**
 * **Egocentric View:**  RGB image from the wrist camera (EEF), providing local texture and depth cues for grasping.
 
@@ -34,7 +36,7 @@ The model extends the standard ACT architecture by adding a parallel 3D encoding
 3. **Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.
 
 
-4. **Action Head:** Standard ACT Transformer Decoder predicts a "chunk" of future actions.
+4. **Action Head:** Standard ACT Transformer Decoder predicts a chunk of future actions.
 
 ## ⚙️ Environment & Setup
 
@@ -92,7 +94,7 @@ Removing the **Egocentric Camera** resulted in 0% pick success, despite perfect 
 
 The model was trained for 100 epochs with the following configuration:
 
-* **Batch Size:** 32
+* **Batch Size:** 912
 * **Learning Rate:**  (Cosine Annealing)
 * **Optimizer:** AdamW (Weight Decay 0.01)
 * **Chunk Size:** 50

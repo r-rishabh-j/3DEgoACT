@@ -1,7 +1,3 @@
-Here is a comprehensive `README.md` for the **3DEgoACT** project, structured for a GitHub repository. It highlights the architecture, motivation, and performance metrics based on the provided report.
-
----
-
 # 3DEgoACT: Viewpoint-Invariant Manipulation via 3D Geometric Priors
 
 **3DEgoACT** is a robust imitation learning policy designed to solve the "viewpoint failure" problem in robotic manipulation. By fusing sparse 3D point clouds with 2D egocentric visual cues, this model achieves significant robustness to camera perturbations where standard policies (like ACT) fail.

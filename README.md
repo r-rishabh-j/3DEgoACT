@@ -12,7 +12,7 @@ Standard imitation learning methods, such as the Action Chunking Transformer (AC
 
 * **Local Precision:** Retains an egocentric (Eye-in-Hand) RGB view encoded via ResNet for fine-grained manipulation capability.
 
-* **Efficiency:** Designed for low-cost deployment, running at ~14 actions/s on consumer hardware (e.g., MacBook M1).
+* **Efficiency:** Designed for low-cost deployment, running at ~14 actions/s on MacBook M1 Pro.
 
 ## 🏗️ Architecture
 
@@ -23,18 +23,15 @@ The model extends the standard ACT architecture by adding a parallel 3D encoding
 1. **Inputs:**
 * **Egocentric View:**  RGB image from the wrist camera (EEF), providing local texture and depth cues for grasping.
 
-
 * **Point Cloud:** A  (RGBXYZ) sparse point cloud, generated from a front-facing RGB-D camera and downsampled via Farthest Point Sampling (FPS).
-
 
 * **Proprioception:** 7D state vector (6 joint angles + gripper state).
 
 2. **Encoders:**
 * **ResNet-18:** Encodes the egocentric image.
-* **PointNet:** Embeds the point cloud into a  token.
+* **PointNet:** Embeds the point cloud into a 512 dimensional token.
 
 3. **Fusion:** The 3D geometric token is fused with 2D visual features and proprioception via a Transformer Encoder.
-
 
 4. **Action Head:** Standard ACT Transformer Decoder predicts a chunk of future actions.
 
@@ -52,6 +49,13 @@ The project is built on the **LeRobot** codebase and simulates a 7-DoF xArm mani
 
 * 4D Control Vector:  (End-effector Cartesian delta + Gripper command).
 
+### Dataset
+
+Dataset was recorded by teleoperation using an XBox controller. Dataset is available at [rishabhrj11/gym-xarm-pointcloud](https://huggingface.co/datasets/rishabhrj11/gym-xarm-pointcloud).
+Dataset stores 
+1. Front, left and right allocentric views
+2. Egocentric EEF camera
+3. FPS downsampled 512x6 RGBXYZ point cloud from front allocentric view
 
 <!--
 ## 🚀 Installation

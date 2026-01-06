@@ -79,14 +79,14 @@ pip install lerobot gymnasium mujoco
 
 We evaluated 3DEgoACT against a strong ACT baseline on a pick-and-place task. While the baseline collapsed when the camera was moved to "Left" or "Right" positions, 3DEgoACT maintained high success rates.
 
-| Model | Camera View | Reach Success | Pick Success | Place Success |
-| --- | --- | --- | --- | --- |
-| **Baseline ACT** | Front (Train) | 90% | 80% | 54% |
-|  | **Left (Unseen)** | **8%** | **0%** | **0%** |
-|  | **Right (Unseen)** | **6%** | **0%** | **0%** |
-| **3DEgoACT** | Front (Train) | 96% | 88% | 60% |
-|  | **Left (Unseen)** | **96%** | **72%** | **54%** |
-|  | **Right (Unseen)** | **94%** | **76%** | **50%** |
+| Model | Camera View | Reach Success | Pick Success | Place Success ($\delta<0.02)$ | Place Success ($\delta<0.05)$ |
+| --- | --- | --- | --- | --- | --- |
+| **Baseline ACT** | Front (Train) | 90% | 80% | 54% | 78% |
+|  | **Left (Unseen)** | **8%** | **0%** | **0%** | 0% |
+|  | **Right (Unseen)** | **6%** | **0%** | **0%** | 0% |
+| **3DEgoACT** | Front (Train) | 96% | 88% | 60% | 74% |
+|  | **Left (Unseen)** | **96%** | **72%** | **54%** | 68% |
+|  | **Right (Unseen)** | **94%** | **76%** | **50%** | 64% |
 
 Data sourced from Table I of the report.
 
